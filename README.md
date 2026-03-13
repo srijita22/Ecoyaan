@@ -1,36 +1,152 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Ecoyaan Checkout Flow
 
-## Getting Started
+A minimal, production-style checkout flow built using **Next.js** and **Tailwind CSS**.
+This project demonstrates a clean frontend architecture for an e-commerce checkout process including cart review, checkout form, payment simulation, and order success confirmation.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## Features
+
+* Cart page displaying selected products
+* Order summary with subtotal, shipping, and total price
+* Checkout form with shipping address
+* Simulated payment step
+* Order success confirmation page
+* Responsive UI using Tailwind CSS
+
+---
+
+## Tech Stack
+
+* **Next.js** – React framework for building modern web applications
+* **React** – Component-based UI architecture
+* **Tailwind CSS** – Utility-first CSS framework for styling
+* **Context API** – Global state management for checkout data
+
+---
+
+## Architecture Overview
+
+The project uses a **component-based architecture** to keep the UI modular and maintainable.
+
+### Key Design Choices
+
+**1. Component Separation**
+
+Reusable UI components are placed inside the `components` folder to maintain separation between layout and logic.
+
+Examples:
+
+* `OrderSummary`
+* `CartItem`
+* `CheckoutForm`
+
+This allows components to be reused across pages.
+
+---
+
+**2. Context API for Global State**
+
+The checkout flow uses a **CheckoutContext** to store and share data like:
+
+* Shipping address
+* Order information
+
+This prevents excessive prop drilling between components.
+
+---
+
+**3. Next.js App Router**
+
+The project uses Next.js routing to manage different stages of the checkout process:
+
+* `/cart` – Displays selected products
+* `/checkout` – Collects shipping information
+* `/payment` – Simulated payment page
+* `/success` – Order confirmation page
+
+---
+
+**4. Tailwind CSS for Styling**
+
+Tailwind CSS was used to build a clean UI quickly while maintaining consistency in spacing, typography, and layout.
+
+Benefits:
+
+* Faster UI development
+* Responsive design
+* Minimal custom CSS
+
+---
+
+## Project Structure
+
+```
+ecoyaan-checkout
+│
+├── app
+│   ├── checkout
+│   ├── payment
+│   ├── success
+│
+├── components
+│   ├── OrderSummary.tsx
+│
+├── context
+│   ├── CheckoutContext.tsx
+│
+├── public
+│   └── products
+│
+├── package.json
+└── README.md
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Running the Project Locally
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 1. Clone the repository
 
-## Learn More
+```
+git clone https://github.com/srijita22/Ecoyaan.git
+```
 
-To learn more about Next.js, take a look at the following resources:
+### 2. Install dependencies
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
+npm install
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### 3. Run the development server
 
-## Deploy on Vercel
+```
+npm run dev
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### 4. Open the app
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Visit:
+
+```
+http://localhost:3000
+```
+
+---
+
+## Future Improvements
+
+Possible enhancements for a production-ready system:
+
+* Backend API integration for orders
+* Payment gateway integration
+* Authentication and user accounts
+* Persistent cart storage
+* Product database integration
+
+---
+
+## Author
+
+Srijita Dutta
+
