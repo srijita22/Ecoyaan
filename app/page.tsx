@@ -1,8 +1,9 @@
 import CartItem from "@/components/CartItem"
 import OrderSummary from "@/components/OrderSummary"
-
+const baseURL =
+  process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
 async function getCartData() {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/cart`, {
+  const res = await fetch(`${baseURL}/api/cart`, {
     cache: "no-store",
   })
 

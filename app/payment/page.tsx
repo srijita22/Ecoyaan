@@ -4,9 +4,10 @@
 import { useRouter } from "next/navigation"
 import { CheckoutContext } from "@/context/CheckoutContext"
 import { useContext, useEffect, useState } from "react"
-
+const baseURL =
+  process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
 async function getCartData() {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/cart`)
+  const res = await fetch(`${baseURL}/api/cart`)
   return res.json()
 }
 export default function PaymentPage() {
