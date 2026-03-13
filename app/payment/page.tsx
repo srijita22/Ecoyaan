@@ -6,7 +6,7 @@ import { CheckoutContext } from "@/context/CheckoutContext"
 import { useContext, useEffect, useState } from "react"
 
 async function getCartData() {
-  const res = await fetch("http://localhost:3000/api/cart")
+  const res = await fetch("/api/cart")
   return res.json()
 }
 export default function PaymentPage() {

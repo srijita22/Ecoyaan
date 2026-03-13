@@ -2,7 +2,7 @@ import CartItem from "@/components/CartItem"
 import OrderSummary from "@/components/OrderSummary"
 
 async function getCartData() {
-  const res = await fetch("http://localhost:3000/api/cart", {
+  const res = await fetch("/api/cart", {
     cache: "no-store",
   })
 
